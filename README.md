@@ -1,6 +1,7 @@
 # Activity Detection using CNNs
 
 **Abstract**
+
 This project presents the development of an innovative Android-based application
 interfaced with the RESpeck sensor, harnessing machine learning to monitor and
 classify physical activities and respiratory patterns in real-time. The objective was
@@ -26,10 +27,10 @@ their effects.
 
 **The Model**
 
-The model used a 3D sliding window throughout time across each of the three main input channels.
-The RESpeck device has two sensors (gyroscope and accelerometer) each giving readings for 3 axes.
-The three input streams each consisted of a (75,6) tensor representing 75 readings across each sensor-axis combination from the raw data, fourier amplitudes, and smoothed differentials.
-These channels were each standardised, pushed through a couple of convolutional and pooling layers, then concatenated and sent through some affine layers, before separating out into to output classifciations.
-These represented the respiratory acitvity such as hyperventilating/normal breathing, and the movement such as walking/ascending stairs.
+The model employed a 3D sliding window across time for each of the three main input channels. The RESpeck device has two sensors (gyroscope and accelerometer), each providing readings for three axes.
 
-More details on the nature of the classification task and the models performance and architectural decisions can be found in the paper in the repository.
+The three input streams consisted of a (75, 6) tensor representing 75 readings across each sensor-axis combination, derived from the raw data, Fourier amplitudes, and smoothed differentials. These channels were standardized, passed through several convolutional and pooling layers, then concatenated and fed into affine layers, before separating into output classifications.
+
+The output classifications represented respiratory activities, such as hyperventilating or normal breathing, and physical movements, such as walking or ascending stairs.
+
+More details on the nature of the classification task, the model's performance, and architectural decisions can be found in the paper available in the repository.
